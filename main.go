@@ -2,6 +2,8 @@ package main
 
 import (
 	"fmt"
+	"io/ioutil"
+	"os"
 	"strconv"
 	"strings"
 )
@@ -78,6 +80,39 @@ func main() {
 		fmt.Printf("  ftItoa result: \"%s\" - Error: %s\n", resultFtItoa, err)
 	} else {
 		fmt.Printf("  ftItoa result: \"%s\"\n", resultFtItoa)
+	}
+
+	// ft_putchar_fd, ft_putendl_fd, ft_putnbr_fd, ft_putstr_fd
+	fileCreated, errFileCreated := os.Create("output.txt")
+
+	if errFileCreated != nil {
+		fmt.Println("Error creating file:", errFileCreated)
+		return
+	}
+
+	defer fileCreated.Close()
+
+	fmt.Printf("\n### PUTCHAR PUTSTR PUTNBR PUTENDL ###\n\n")
+	ftPutcharFd('A', fileCreated)
+	ftPutendlFd("Hello, World!", fileCreated)
+	ftPutnbrFd(12345, fileCreated)
+	ftPutstrFd("This is a string.", fileCreated)
+
+	fileRead, errFileRead := ioutil.ReadFile("output.txt")
+
+	if errFileRead != nil {
+		fmt.Println("Error al leer el archivo:", errFileRead)
+		return
+	}
+
+	fmt.Println("Content file:")
+	fmt.Println(string(fileRead))
+
+	err = os.Remove("output.txt")
+
+	if err != nil {
+		fmt.Println("Error deleting file:", err)
+		return
 	}
 
 	// ft_split
