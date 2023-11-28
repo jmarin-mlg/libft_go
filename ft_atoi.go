@@ -22,7 +22,7 @@ func ftAtoi(str string) int {
 		i++
 	}
 
-	for i < strLen && str[i] >= '0' && str[i] <= '9' {
+	for i < strLen && ftIsDigit(int(str[i])) {
 		result = (result * 10) + int(str[i]-'0')
 		i++
 	}
