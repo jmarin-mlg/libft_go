@@ -82,6 +82,37 @@ func main() {
 		fmt.Printf("  ftItoa result: \"%s\"\n", resultFtItoa)
 	}
 
+	// ft_memchr, ft_memcmp, ft_memcpy, ft_memmove
+	fmt.Printf("\n### MEMCHR MEMCMP MEMCPY MEMMOVE ###\n\n")
+
+	// ftMemchr
+	str1 := "Hello, World!"
+	charToFind := byte('o')
+	n1 := 5
+	resultMemchr := ftMemchr([]byte(str1), int(charToFind), n1)
+	fmt.Printf(" ftMemchr Result: %v\n", resultMemchr)
+
+	// ftMemcmp
+	str2a := "Hello, Go!"
+	str2b := "Hello, World!"
+	n2 := 6
+	resultMemcmp := ftMemcmp([]byte(str2a), []byte(str2b), n2)
+	fmt.Printf(" ftMemcmp Result: %v\n", resultMemcmp)
+
+	// ftMemcpy
+	src := "Copy this!"
+	dst := make([]byte, len(src))
+	ftMemcpy(dst, []byte(src), len(src))
+	fmt.Printf(" ftMemcpy Result: %s\n", dst)
+
+	// ftMemmove
+	str3 := "Move me!"
+	dst3 := make([]byte, len(str3))
+	src3 := []byte(str3)
+	len3 := len(str3)
+	ftMemmove(dst3, src3, len3)
+	fmt.Printf("ftMemmove Result: %s\n", dst3)
+
 	// ft_putchar_fd, ft_putendl_fd, ft_putnbr_fd, ft_putstr_fd
 	fileCreated, errFileCreated := os.Create("output.txt")
 
