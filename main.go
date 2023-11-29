@@ -160,6 +160,23 @@ func main() {
 	fmt.Printf("           ftSplit result: %v\n", resultFtSplit)
 	fmt.Printf("Simplified ftSplit result: %v\n", resultSimplifiedFtSplit)
 
+	// ft_substr
+	inputString := "Hello, World!"
+	startIndex := uint(7)
+	substrLength := 5
+
+	fmt.Printf("\n### SUBSTR ###\n\n")
+
+	result, err := ftSubstr(inputString, startIndex, substrLength)
+
+	if err != nil {
+		fmt.Println("Error:", err)
+		return
+	}
+
+	fmt.Printf(" Original string: %s\n", inputString)
+	fmt.Printf("Substring result: %s\n", result)
+
 	// ft_tolower, ft_toupper
 	characters := []int{'A', 'b', 'C', 'd', 'E', '!', '1'}
 
