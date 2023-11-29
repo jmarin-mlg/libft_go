@@ -16,5 +16,6 @@ func ftMemcmp(s1 []byte, s2 []byte, n int) int {
 			return int(s1[i]) - int(s2[i])
 		}
 	}
+
 	return 0
 }

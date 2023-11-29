@@ -9,5 +9,6 @@ func ftMemset(b []byte, c byte, len int) []byte {
 	for i := 0; i < len; i++ {
 		b[i] = c
 	}
+
 	return b
 }

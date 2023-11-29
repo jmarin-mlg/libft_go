@@ -14,5 +14,6 @@ func ftMemchr(s []byte, c int, n int) unsafe.Pointer {
 			return unsafe.Pointer(&s[i])
 		}
 	}
+
 	return nil
 }

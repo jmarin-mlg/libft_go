@@ -4,13 +4,16 @@ import "errors"
 
 func numlen(num int) int {
 	len := 0
+
 	if num <= 0 {
 		len = 1
 	}
+
 	for num != 0 {
 		len++
 		num /= 10
 	}
+
 	return len
 }
 
@@ -20,6 +23,7 @@ func numstr(str []byte, num uint, len int) []byte {
 		len--
 		num /= 10
 	}
+
 	return str
 }
 

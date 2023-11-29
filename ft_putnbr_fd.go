@@ -19,6 +19,7 @@ func ftPutnbrFd(n int, fd *os.File) {
 	}
 
 	divisor := 1
+
 	for n/divisor > 9 {
 		divisor *= 10
 	}
