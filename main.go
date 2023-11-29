@@ -159,4 +159,32 @@ func main() {
 	fmt.Printf("             Split result: %v\n", resultOriginalSplit)
 	fmt.Printf("           ftSplit result: %v\n", resultFtSplit)
 	fmt.Printf("Simplified ftSplit result: %v\n", resultSimplifiedFtSplit)
+
+	// ft_tolower, ft_toupper
+	characters := []int{'A', 'b', 'C', 'd', 'E', '!', '1'}
+
+	fmt.Printf("\n### TOLOWER TOUPPER ###\n\n")
+	fmt.Println("Original characters:", stringSlice(characters))
+
+	// Test ftTolower
+	for i, c := range characters {
+		characters[i] = ftTolower(c)
+	}
+	fmt.Println("After ftTolower:", stringSlice(characters))
+
+	// Test ftToupper
+	for i, c := range characters {
+		characters[i] = ftToupper(c)
+	}
+	fmt.Println("After ftToupper:", stringSlice(characters))
+}
+
+func stringSlice(intSlice []int) string {
+	var result string
+
+	for _, val := range intSlice {
+		result += string(val)
+	}
+
+	return result
 }
