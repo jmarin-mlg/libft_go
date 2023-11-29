@@ -2,6 +2,16 @@ package main
 
 import "errors"
 
+/*
+** numlen calculates the length of the integer representation, considering both
+** positive and negative numbers.
+**
+** Parameters:
+**   num: The integer for which the length is calculated.
+**
+** Returns:
+**   The length of the integer representation.
+ */
 func numlen(num int) int {
 	len := 0
 
@@ -17,6 +27,18 @@ func numlen(num int) int {
 	return len
 }
 
+/*
+** numstr converts an unsigned integer to a string and stores it in the provided
+** character array starting from the given index.
+**
+** Parameters:
+**   str: The character array to store the string representation.
+**   num: The unsigned integer to convert.
+**   len: The starting index in the character array to store the string.
+**
+** Returns:
+**   The updated character array with the string representation.
+ */
 func numstr(str []byte, num uint, len int) []byte {
 	for num > 0 {
 		str[len] = byte((num % 10) + '0')
@@ -27,6 +49,15 @@ func numstr(str []byte, num uint, len int) []byte {
 	return str
 }
 
+/*
+** ftItoa converts an integer to a string.
+**
+** Parameters:
+**   n: The integer to convert.
+**
+** Returns:
+**   The string representing the number, or an error if memory allocation fails.
+ */
 func ftItoa(n int) (string, error) {
 	len := numlen(n)
 	res := ftCalloc(uintptr(len+1), 1)
