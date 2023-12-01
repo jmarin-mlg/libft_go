@@ -160,6 +160,31 @@ func main() {
 	fmt.Printf("           ftSplit result: %v\n", resultFtSplit)
 	fmt.Printf("Simplified ftSplit result: %v\n", resultSimplifiedFtSplit)
 
+	// ft_strchr, ft_strrchr
+	fmt.Printf("\n### STRCHR STRRCHR ###\n\n")
+
+	// Prueba con ftStrchr
+	s1 := "Hello, World!"
+	charTolower := byte('o')
+	index1 := ftStrchr(s1, int(charTolower))
+
+	if index1 != -1 {
+		fmt.Printf("Encontrado '%c' en la posición %d de \"%s\"\n", charTolower, index1, s1)
+	} else {
+		fmt.Printf("'%c' no encontrado en \"%s\"\n", charTolower, s1)
+	}
+
+	// Prueba con ftStrrchr
+	s2 := "Go Programming"
+	charToupper := byte('o')
+	index2 := ftStrrchr(s2, int(charToupper))
+
+	if index2 != -1 {
+		fmt.Printf("Encontrado '%c' en la posición %d de \"%s\"\n", charToupper, index2, s2)
+	} else {
+		fmt.Printf("'%c' no encontrado en \"%s\"\n", charToupper, s2)
+	}
+
 	// ft_substr
 	inputString := "Hello, World!"
 	startIndex := uint(7)
