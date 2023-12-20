@@ -185,6 +185,27 @@ func main() {
 		fmt.Printf("'%c' no encontrado en \"%s\"\n", charToupper, s2)
 	}
 
+	// ft_strmapi
+	fmt.Printf("\n### STRMAPI ###\n\n")
+
+	// Prueba con ftStrmapi
+	s5 := "Hello, World!"
+
+	// Una función de ejemplo que convierte letras minúsculas en mayúsculas y viceversa
+	convertir := func(index uint, char byte) byte {
+		if char >= 'a' && char <= 'z' {
+			return char - ('a' - 'A')
+		} else if char >= 'A' && char <= 'Z' {
+			return char + ('a' - 'A')
+		}
+		return char
+	}
+
+	resultFtStrmapi := ftStrmapi(s5, convertir)
+
+	fmt.Printf("Original string: \"%s\"\n", s5)
+	fmt.Printf("Result after conversion: \"%s\"\n", resultFtStrmapi)
+
 	// ft_strncmp
 	fmt.Printf("\n### STRNCMP ###\n\n")
 
