@@ -6,12 +6,14 @@ func ftStrncmp(s1, s2 string, n int) int {
 		return 0
 	}
 
+	lenS1 := ftStrlen(s1)
+	lenS2 := ftStrlen(s2)
 	i := 0
-	for i < n-1 && i < len(s1) && i < len(s2) && s1[i] == s2[i] {
+	for i < n-1 && i < lenS1 && i < lenS2 && s1[i] == s2[i] {
 		i++
 	}
 
-	if i < len(s1) && i < len(s2) {
+	if i < lenS1 && i < lenS2 {
 		return int(s1[i]) - int(s2[i])
 	}
 
