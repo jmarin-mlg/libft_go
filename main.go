@@ -185,6 +185,20 @@ func main() {
 		fmt.Printf("'%c' no encontrado en \"%s\"\n", charToupper, s2)
 	}
 
+	// ft_strncmp
+	fmt.Printf("\n### STRNCMP ###\n\n")
+
+	// Prueba con ftStrncmp
+	s3 := "Hello, World!"
+	s4 := "Hello, Go!"
+	n := 7
+
+	resultFtStrcmp := ftStrncmp(s3, s4, n)
+
+	fmt.Printf("s1: \"%s\"\n", s3)
+	fmt.Printf("s2: \"%s\"\n", s4)
+	fmt.Printf("Comparison result (first %d characters): %d\n", n, resultFtStrcmp)
+
 	// ft_strtrim
 	fmt.Printf("\n### STRTRIM ###\n\n")
 
