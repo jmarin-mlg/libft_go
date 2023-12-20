@@ -185,6 +185,18 @@ func main() {
 		fmt.Printf("'%c' no encontrado en \"%s\"\n", charToupper, s2)
 	}
 
+	// ft_strtrim
+	fmt.Printf("\n### STRTRIM ###\n\n")
+
+	// Prueba con ftStrtrim
+	s := "   Hello, World!   "
+	set := " "
+	trimmed := ftStrtrim(s, set)
+
+	fmt.Printf("Original: \"%s\"\n", s)
+	fmt.Printf("Set: \"%s\"\n", set)
+	fmt.Printf("Trimmed: \"%s\"\n", trimmed)
+
 	// ft_substr
 	inputString := "Hello, World!"
 	startIndex := uint(7)
